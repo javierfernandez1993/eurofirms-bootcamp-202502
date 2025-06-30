@@ -4,7 +4,7 @@ import { registerUser } from './registerUser.js'
 connect('mongodb://localhost:27017/metalquest')
     .then(() => {
         try {
-            return registerUser('Jhon Lenon', 'jhon@lenon.com', 'jhonlenon', '123123123')
+            return registerUser('Mick jager', 'mick@jager.com', 'mickjager', '123123123')
             .then(() => console.log('user registered'))
             .catch(error => console.error(error))
         } catch(error) {
