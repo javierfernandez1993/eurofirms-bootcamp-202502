@@ -1,7 +1,7 @@
 fetch('http://localhost:8080/users', {
     method: 'POST',
     headers: {
-        'content-Type': 'application/json' 
+        'Content-Type': 'application/json' 
     },
     body: '{"name":"Doro Pech", "email":"doro@pech.com", "username":"doropech", "password":"123123123"}'
 })
