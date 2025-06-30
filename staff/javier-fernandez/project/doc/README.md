@@ -38,7 +38,7 @@ Admin (User) [v0.1]
 
 ### Prototype
 
-[Figma] 
+[Figma] "https://www.figma.com/design/M9R4Dlq7TnaoKqUmTudV4c/Untitled?node-id=70-38&p=f&t=2GJfKNRnQsnitPLF-0"
 
 ---
 

@@ -2,7 +2,7 @@ import { connect } from './data/index.js'
 import express from 'express'
 import cors from 'cors'
 
-import { usersRouter } from './routes/userRouter.js'
+import { usersRouter } from './routes/usersRouter.js'
 import { errorHandler } from './middlewares/errorHandler.js'
 
 const { MONGO_URL, PORT } = process.env

@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 
-const { schema, model } = mongoose 
-const { types } = Schema 
-const { objectId } = Types
+const { Schema, model } = mongoose 
+const { Types } = Schema 
+const { ObjectId } = Types
 
-const user = neew schema ({
+const user = new Schema ({
     name: {
         type: String,
         required: true 
