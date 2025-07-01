@@ -36,4 +36,68 @@ export const App = () => {
 
             alert(error.message)
         }
+
+    const handleAlertAccepted = () => setAlertMessage('')
+
+    const handleCanceltConfirm = () => {
+        setConfirmMessage('')
+
+        confirmAction.resolve(true)
+    }
+
+
+    const handleShowConfirm = message => {
+        setConfirmMessage(message)
+
+        confirmAction.resolve(false)
+
+     return new Promise((resolve, reject) =>
+    {
+            setConfirmAction({ resolve })
+    })
+    }
+
+    console.log('App -> render')
+
+    return <Context.Provider value = {{
+        alert: setAlertMessage,
+        confirm: handleShowConfirm 
+    }}>
+        {alertMessage && <Alert message={alertMessage} onAccepted={handleAlertAccepted}/>}
+
+        {confirmMessage && <Confirm message={confirmMessage} onCancelled={handleCancelConfirm} onAccepted={handleAcceptConfirm} />}
+
+        <Routes>
+            <Route path='/' element={
+                !loggedIn ?
+                    <Landing
+                    onRegisterClicked={handleRegisterCclicked}
+                    onLoginClicked={handleLoginClicked}
+                    />
+                    :
+                    <Home onUserLoggedOut={handleUserLoggedOut} >
+            } />
+
+            <Route path='/register' element={
+                !loggedIn ?
+                    <Register
+                        onLoginClicked={handleLoginClicked}
+                        onUserRegisterred={handleUserRegistered}
+                    />
+                    :
+                    <Navigate to='/' />
+            } />
+
+            <Route path='/login' element={
+                !loggedIn ?
+                    <Loggin 
+                        onRegisterClicked={handleRegisterClicked}
+                        onUserLoggedIn={handleUserLoggedIn}
+                    />
+                    :
+                    <Navigate to='/' />
+            } />
+        </Routes>
+    </Context.Provider>
+
 }
