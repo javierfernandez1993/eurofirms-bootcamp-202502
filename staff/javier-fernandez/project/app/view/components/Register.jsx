@@ -44,10 +44,23 @@ export const Register = (props) => {
         <form className="mt-2 flex flex-col gap-4" onSubmit= {handleRegisterSubmit}>
             <div className="flex flex-col gap">
                 <label htmlfor="name">Name</label>
-                <imput className="border-3 px-2" type="text" id="name" name="name" placeholder="your full name" />
+                <input className="border-3 px-2" type="text" id="name" name="name" placeholder="your full name" />
             </div>
 
-            
+            <div className="flex flex-col gap">
+                <label htmlFor="email">E-mail</label>
+                <input className="border-3 px-2" type="text" id="email" name="email" placeholder="your e-mail"/>
+            </div>
+
+            <div className="flex flex-col gap">
+                <label htmlFor="password">Password</label>
+                <input className="border-3 px-2" type="password" if="password" name="password" placeholder="your password"/>
+            </div>
+
+            <div className="flex justify-between">
+                <a className="underline" href="#" onClick={handleLoginClick} >Login</a>
+                <button className="bg-black text.white px-3" type="submit">Register</button>
+            </div>
         </form>
     </div>
 }
