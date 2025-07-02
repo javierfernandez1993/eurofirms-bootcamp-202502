@@ -40,7 +40,7 @@ export const Login = (props) => {
 
 
     return <div className="p-5">
-        <i className="text-2xl">LOGO</i>
+        <i className="text-2xl">METALQUEST</i>
 
         <div className="mt-2">
             <h1 className="text-xl">Login</h1>

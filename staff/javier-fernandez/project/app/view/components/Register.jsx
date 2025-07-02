@@ -18,7 +18,7 @@ export const Register = (props) => {
 
         try {
             logic.registerUser(name, email, username, password)
-            .then(() >= {
+            .then(() => {
                 form.reset()
 
                 onUserRegistered()
