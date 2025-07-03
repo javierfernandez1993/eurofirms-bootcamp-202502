@@ -8,7 +8,7 @@ import { Login } from './view/Login'
 import { Confirm } from './view/components/confirm'
 import { Context } from './context'
 
-import { logic } from './context'
+import { logic } from './logic'
 
 export const App = () => {
     const navigate = useNavigate()
@@ -75,7 +75,7 @@ export const App = () => {
                     onLoginClicked={handleLoginClicked}
                     />
                     :
-                    <Home onUserLoggedOut={handleUserLoggedOut} >
+                    <Home onUserLoggedOut={handleUserLoggedOut} />
             } />
 
             <Route path='/register' element={
@@ -98,6 +98,6 @@ export const App = () => {
                     <Navigate to='/' />
             } />
         </Routes>
-    </Context.Provider>
+        </Context.Provider>
 
 }
