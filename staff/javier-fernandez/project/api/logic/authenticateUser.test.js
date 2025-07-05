@@ -4,7 +4,7 @@ import { authenticateUser } from './authenticateUser.js'
 connect('mongodb://localhost:27017/metalquest')
     .then(() =>{
         try {
-            return authenticateUser('jhonlenon', '123123123')
+            return authenticateUser('mickjager', '123123123')
                 .then(userId => console.log('user authenticated', userId))
                 .catch(error => console.error(error))
         } catch(error) {

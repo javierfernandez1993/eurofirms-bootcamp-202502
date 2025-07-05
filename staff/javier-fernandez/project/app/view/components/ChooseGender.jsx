@@ -1,4 +1,4 @@
-export const Genders = () => {
+export const ChooseGender = () => {
     return <section>
         <div className="my-2 flex justify-start font-family: Rock Salt">
             ¿Cual es tu genero favorito?

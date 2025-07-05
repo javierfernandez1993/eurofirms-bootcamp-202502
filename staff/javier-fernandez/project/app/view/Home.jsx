@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { logic } from "../logic";
 
-import { Genders } from './components/Genders';
+import { ChooseGender } from './components/ChooseGender';
 
 export const Home = ({ onUserLoggedOut }) => {
     const [view, setView] = useState("quest");
@@ -33,6 +33,8 @@ export const Home = ({ onUserLoggedOut }) => {
         }
     };
 
+    const handleRockClicked = () => navigate('/rock-poll')
+
     console.log("Home -> render");
 
     return (
@@ -46,8 +48,15 @@ export const Home = ({ onUserLoggedOut }) => {
                     Hello, {username}!
                 </h1>
 
-                <Genders onRockClicked={handleRockClicked}
-                onMetalClicked={handleMetalClicked} />
+                {/* 
+                use routes
+                - /choose-gender -> ChooseGender
+                - /rock-poll -> RockPoll
+                - /metal-poll -> MetalPoll
+                 */}
+
+                <ChooseGender onRockClicked={handleRockClicked}
+                    onMetalClicked={handleMetalClicked} />
             </div>
         </div>
     );
