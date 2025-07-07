@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { logic } from "../logic";
+import { logic } from '../logic';
 
 import { ChooseGender } from './components/ChooseGender';
 

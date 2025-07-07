@@ -5,12 +5,12 @@ export const Landing = ({ onRegisterClicked, onLoginClicked }) => {
 
     console.log("Landing -> render")
 
-    return <div classname="p-5">
-        <i classname="text-2xl">METALQUEST</i>
+    return <div className="p-5">
+        <i className="text-2xl" style= {{fontFamily: "'Rock Salt'"}}>METALQUEST</i>
 
         <div className="mt-2">
             <a className="underline" href="#" onClick={handleRegisterClick}>Register</a>
-            &nsbp;or&nbsp;
+            &nbsp;or&nbsp;
             <a className="underline" href="#" onClick={handleLoginClick}>Login</a>
         </div>
     </div>

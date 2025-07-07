@@ -1,12 +1,13 @@
-import { useState } from `react`
+import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router'
 
 import { Register } from './view/Register'
 import { Home } from './view/Home'
-import { Alert } from './view/components/confirm'
+import { Alert } from './view/components/alert'
 import { Login } from './view/Login'
 import { Confirm } from './view/components/confirm'
 import { Context } from './context'
+import { Landing } from './view/landing'
 
 import { logic } from './logic'
 
@@ -19,7 +20,7 @@ export const App = () => {
 
     const handleRegisterClicked = () => navigate('/register')
 
-    const hndleLoginClicked = () => navigate('/login')
+    const handleLoginClicked = () => navigate('/login')
 
     const handleUserRegistered = () => navigate('/login')
 
@@ -39,7 +40,7 @@ export const App = () => {
 
     const handleAlertAccepted = () => setAlertMessage('')
 
-    const handleCanceltConfirm = () => {
+    const handleCancelConfirm = () => {
         setConfirmMessage('')
 
         confirmAction.resolve(true)
@@ -71,7 +72,7 @@ export const App = () => {
             <Route path='/*' element={
                 !loggedIn ?
                     <Landing
-                    onRegisterClicked={handleRegisterCclicked}
+                    onRegisterClicked={handleRegisterClicked}
                     onLoginClicked={handleLoginClicked}
                     />
                     :
@@ -90,7 +91,7 @@ export const App = () => {
 
             <Route path='/login' element={
                 !loggedIn ?
-                    <Loggin 
+                    <Login 
                         onRegisterClicked={handleRegisterClicked}
                         onUserLoggedIn={handleUserLoggedIn}
                     />
