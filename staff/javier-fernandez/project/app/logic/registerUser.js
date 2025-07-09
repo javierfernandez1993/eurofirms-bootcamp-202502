@@ -1,4 +1,4 @@
-import { data } from '../data'
+import { validate, SystemError, errors } from 'com'
 
 /**
  * Registers a user in the system.
@@ -28,7 +28,7 @@ export const registerUser = (name, email, username, password) => {
     return fetch(import.meta.env.VITE_API_URL + '/users', {
         method: 'POST',
         headers: {
-            'content-Type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ name, email, username, password })
     })

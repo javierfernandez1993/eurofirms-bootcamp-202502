@@ -7,7 +7,7 @@ export const Register = (props) => {
     const handleLoginClick = () => onLoginClicked()
 
     const handleRegisterSubmit = event => {
-        event.preventDefoult()
+        event.preventDefault()
 
         const form = event.target
 
@@ -43,7 +43,7 @@ export const Register = (props) => {
 
         <form className="mt-2 flex flex-col gap-4" onSubmit= {handleRegisterSubmit}>
             <div className="flex flex-col gap">
-                <label htmlfor="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <input className="border-3 px-2" style= {{fontFamily: "'Rock Salt'"}} type="text" id="name" name="name" placeholder="your full name" />
             </div>
 
@@ -59,12 +59,12 @@ export const Register = (props) => {
 
             <div className="flex flex-col gap">
                 <label htmlFor="username">Username</label>
-                <imput className="border-3 px-2" style= {{fontFamily: "'Rock Salt'"}} type="username" if="username" name="username" placeholder="your username"/>
+                <input className="border-3 px-2" style= {{fontFamily: "'Rock Salt'"}} type="username" if="username" name="username" placeholder="your username"/>
             </div>
 
             <div className="flex justify-between">
                 <a className="underline" href="#" onClick={handleLoginClick} >Login</a>
-                <button className="bg-black text.white px-3" type="submit">Register</button>
+                <button className="bg-black text-white px-3" type="submit">Register</button>
             </div>
                 
         </form>

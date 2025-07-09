@@ -22,7 +22,7 @@ export const Rock = ({ onRockClicked }) => {
                 <div className="alert alert-warning">
                 "ya hemos registrado tu voto en esta encuesta."
                 </div>
-                <div className="alert alert-danger">Selecciona una opción</div>
+                <div className="alert alert-danger">"Selecciona una opción"</div>
                 <ul>
                     <li>
                         <input type="text" name="weblator-chart-options"/>
