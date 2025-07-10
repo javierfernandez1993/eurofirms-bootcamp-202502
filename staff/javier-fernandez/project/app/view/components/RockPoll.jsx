@@ -1,10 +1,17 @@
 import { useState } from 'react'
 
-import { logic } from '../logic'
+import { logic } from '../../logic'
 
-export const Rock = ({ onRockClicked }) => {
+export const RockPoll = ({ onRockClicked }) => {
+    const [resultPoll, setResultPoll] = useState()
     const handleRockClicked = () => onRockClicked()
-
+    const handleVoteClicked = () => {
+        const selectedRadio = document.querySelector("input[name=weblator-chart-options]:checked")
+    const resultElement = document.getElementById("result")
+    const valuePoll = selectedRadio.value 
+    resultElement.textContent = valuePoll
+    setResultPoll(valuePoll)
+    }
     console.log("RockPoll -> render ")
 
     return  <div className="2-xl">
@@ -25,27 +32,28 @@ export const Rock = ({ onRockClicked }) => {
                 <div className="alert alert-danger" style= {{fontFamily: "'Rock Salt'"}}>"Selecciona una opción"</div>
                 <ul>
                     <li>
-                        <input type="text" name="weblator-chart-options"/>
+                        <input type="radio" value="hardrock" name="weblator-chart-options"/>
                         <label className="weblator-poll-label" style= {{fontFamily: "'Rock Salt'"}}>Hard Rock</label>
                     </li>
                     <li>
-                        <input type="text" name="weblator-chart-options"/>
+                        <input type="radio" value="rockclasico" name="weblator-chart-options"/>
                         <label className="weblator-poll-label" style= {{fontFamily: "'Rock Salt'"}}>rock clasico</label>
                     </li>
                     <li>
-                        <input type="type" name="weblator-chart-options"/>
+                        <input type="radio" value="poprock" name="weblator-chart-options"/>
                         <label className="weblator-poll-label" style= {{fontFamily: "'Rock Salt'"}}>Pop Rock</label>
                     </li>
                     <li>
-                        <input type="text" name="weblator-chart-options"/>
+                        <input type="radio" value="punkrock" name="weblator-chart-options"/>
                         <label className="weblator-poll-label" style= {{fontFamily: "'Rock Salt'"}}>Punk Rock</label>
                     </li>
                 </ul>
                 </div>
                 <div className="panel-footer">
                     <div className="button-vote">
-                        <button className="btn btn-default vote-button weblator-poll-submit"></button>
+                        <button className="btn btn-default   bg-black text-white weblator-poll-submit" type="button" onClick={handleVoteClicked}>votar</button>
                     </div>
+                        <p id="result">{resultPoll}</p>
                 </div>
             </div>
         </div>

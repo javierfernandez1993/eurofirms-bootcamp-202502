@@ -75,15 +75,23 @@ export const App = () => {
         {confirmMessage && <Confirm message={confirmMessage} onCancelled={handleCancelConfirm} onAccepted={handleAcceptConfirm} />}
 
         <Routes>
-            <Route path='/' element={
+            <Route path="/" element={<Navigate to="/chooseGender"/>}/>
+            
+            <Route path='/*' element={
+                !loggedIn ?
+                   <Navigate to='/landing'/>
+                    :
+                    <Home onUserLoggedOut={handleUserLoggedOut} />
+            } />
+
+            <Route path='/landing' element={
                 !loggedIn ?
                     <Landing
                     onRegisterClicked={handleRegisterClicked}
                     onLoginClicked={handleLoginClicked}
                     />
                     :
-                    <Home onUserLoggedOut={handleUserLoggedOut} />
-            } />
+                    <Navigate to='/chooseGender'/> }/>
 
             <Route path='/register' element={
                 !loggedIn ?

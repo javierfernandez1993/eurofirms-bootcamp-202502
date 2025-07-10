@@ -91,12 +91,12 @@ Admin (User) [v0.1]
 - email (string, required, unique)
 - password (string, required)
 
-**Exercise**
+**survey**
 
 - id (UUID)
 - name (string, required)
-- genre and subgenre test
-- image representing each subgenre (string)
+- options (array string)
+- result (array number)
 
 ### Technologies
 

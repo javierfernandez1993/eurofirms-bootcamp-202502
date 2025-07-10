@@ -30,8 +30,31 @@ const user = new Schema ({
 
 })
 
+const survey = new Schema ({
+    question: {
+        type: String,
+        required: true,
+        unique: true,
+        
+    },
+    
+    options: {
+        type: [String],
+        required: true,
+    },
+
+    result: {
+        type: [Number],
+        required: true,
+    },
+})
+
+
 const User = model('User', user)
+const Survey = model('Survey', survey)
 
 export {
-    User 
+    User,
+    Survey
 }
+
