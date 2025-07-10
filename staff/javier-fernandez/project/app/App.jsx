@@ -24,7 +24,7 @@ export const App = () => {
 
     const handleUserRegistered = () => navigate('/login')
 
-    const handleUserLoggedIn = () => navigate('/login')
+    const handleUserLoggedIn = () => navigate('/')
 
     const handleUserLoggedOut = () => navigate('/login')
 
@@ -39,11 +39,17 @@ export const App = () => {
         }
 
     const handleAlertAccepted = () => setAlertMessage('')
+    
+    const handleAcceptConfirm = () => {
+        setConfirmMessage('')
+
+        confirmAction.resolve(true)
+    }
 
     const handleCancelConfirm = () => {
         setConfirmMessage('')
 
-        confirmAction.resolve(true)
+        confirmAction.resolve(false)
     }
 
 
@@ -69,7 +75,7 @@ export const App = () => {
         {confirmMessage && <Confirm message={confirmMessage} onCancelled={handleCancelConfirm} onAccepted={handleAcceptConfirm} />}
 
         <Routes>
-            <Route path='/*' element={
+            <Route path='/' element={
                 !loggedIn ?
                     <Landing
                     onRegisterClicked={handleRegisterClicked}
@@ -83,7 +89,8 @@ export const App = () => {
                 !loggedIn ?
                     <Register
                         onLoginClicked={handleLoginClicked}
-                        onUserRegisterred={handleUserRegistered}
+                        onUserRegistered={handleUserRegistered}
+                        alert={setAlertMessage}
                     />
                     :
                     <Navigate to='/' />
@@ -94,6 +101,7 @@ export const App = () => {
                     <Login 
                         onRegisterClicked={handleRegisterClicked}
                         onUserLoggedIn={handleUserLoggedIn}
+                        alert={setAlertMessage}
                     />
                     :
                     <Navigate to='/' />

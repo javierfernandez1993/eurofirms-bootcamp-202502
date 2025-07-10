@@ -1,9 +1,8 @@
-import { CredentialsError, NotFoundError, SystemError, ValidationError } from 'com'
+import { useContext } from '../context'
 import { logic } from '../logic'
 
 export const Login = ({ onRegisterClicked, onUserLoggedIn }) => {
     const { alert } = useContext()
-    const onUserLoggedIn = props.onUserLoggedIn
 
     const handleRegisterClick = () => onRegisterClicked()
 
@@ -25,18 +24,16 @@ export const Login = ({ onRegisterClicked, onUserLoggedIn }) => {
             .catch(error => {
                 console.error(error)
 
-                if (error instanceof NotFoundError || error instanceof CredentialsError)
-                    alert('WARN:', error.message)
-                else alert('ERROR:', error.message)
+                alert(error.message)
             })
             }catch (error) {
-                if (error instanceof ValidationError)
-                    alert('WARN:', error.message)
-                else alert('ERROR:', error.message)
+                console.error(error)
+
+                alert(error.message)
             }
     }
 
-    console.log("Login -> render")
+    console.log('Login -> render')
 
 
     return <div className="p-5">
